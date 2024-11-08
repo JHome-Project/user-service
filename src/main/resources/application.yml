@@ -1,0 +1,28 @@
+server:
+  port: 9000
+
+logging:
+  level:
+    root: info
+    org.springframework.web: debug
+
+spring:
+  application:
+    name: jhome-user
+  web:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://ljy-mysql.c5k68se8apyd.ap-southeast-2.rds.amazonaws.com:3306/jhome?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: root
+    password: given02!
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+  sql:
+    init:
+      mode: always
