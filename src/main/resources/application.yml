@@ -21,7 +21,8 @@ spring:
     password: given02!
   jpa:
     hibernate:
-      ddl-auto: create
+      dialect: org.hibernate.dialect.MySQLDialect
+      ddl-auto: create-drop
     show-sql: true
   sql:
     init:
