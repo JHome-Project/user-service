@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice
-public class GeneralExceptionHandler {
+public class GlobalExceptionHandler {
 
     // 파라미터 유효성 검증 에러
     @ExceptionHandler(MethodArgumentNotValidException.class)

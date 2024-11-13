@@ -11,5 +11,4 @@ public class JoinRequest {
 
     @NotBlank(message = "Required Parameter Error")
     private String password;
-
 }

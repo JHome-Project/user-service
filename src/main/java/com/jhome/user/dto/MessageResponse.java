@@ -15,19 +15,11 @@ public final class MessageResponse<D> {
         this.data = data;
     }
 
-    public static <D> MessageResponse of(int code, String message, D data) {
-        return new MessageResponse(code, message, data);
+    public static <D> MessageResponse<?> of(ResponseCode responseCode, D data) {
+        return new MessageResponse<>(responseCode.getCode() , responseCode.getMessage(), data);
     }
 
-    public static <D> MessageResponse of(ResponseCode responseCode, D data) {
-        return new MessageResponse(responseCode.getCode() , responseCode.getMessage(), data);
-    }
-
-    public static <D> MessageResponse of(ResponseCode responseCode) {
-        return new MessageResponse(responseCode.getCode() , responseCode.getMessage(), null);
-    }
-
-    public static <D> MessageResponse of(int code, String message) {
-        return new MessageResponse(code, message, null);
+    public static <D> MessageResponse<?> of(ResponseCode responseCode) {
+        return new MessageResponse<>(responseCode.getCode() , responseCode.getMessage(), null);
     }
 }

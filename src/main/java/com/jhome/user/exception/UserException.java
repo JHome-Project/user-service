@@ -1,11 +1,13 @@
 package com.jhome.user.exception;
 
-public class UserException extends RuntimeException{
-    public UserException(String message){
-        super(message);
-    }
+import com.jhome.user.constant.ResponseCode;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
-    public UserException(){
-        super();
-    }
+@Getter
+@RequiredArgsConstructor
+public class UserException extends RuntimeException{
+
+    private final ResponseCode responseCode;
+
 }
