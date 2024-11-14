@@ -25,15 +25,15 @@ public class UserService {
                 .password(bCryptPasswordEncoder.encode(request.getPassword()))
                 .build();
 
-        return createUser(newUser);
+        return saveUser(newUser);
     }
 
     public UserEntity edit(UserEntity user, UserRequest request) {
         user.edit(request);
-        return userRepository.save(user);
+        return saveUser(user);
     }
 
-    public UserEntity createUser(UserEntity user) {
+    public UserEntity saveUser(UserEntity user) {
         return userRepository.save(user);
     }
 
@@ -47,7 +47,7 @@ public class UserService {
 
     public UserEntity getUserOrThrow(String username) {
         return userRepository.findByUsername(username)
-                .orElseThrow(() -> new UserException(ResponseCode.USER_EXCEPTIONS));
+                .orElseThrow(() -> new UserException(ResponseCode.USER_NOT_FOUND));
     }
 
     public void deleteUser(UserEntity user) {
